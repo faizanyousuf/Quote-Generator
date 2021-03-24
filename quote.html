@@ -1,0 +1,165 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Quote Generator
+    </title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="div1">
+            <h1 id="h1">Programming Quotes</h1>
+        </div>
+
+        <div id="container">
+
+
+            <div id="line"></div>
+
+            <div id="div2">
+                <p id="p1"></p>
+                <p id="p2"></p>
+            </div>
+
+
+
+            <div id="div5">
+                <button id="btn1" onclick="generateQuote()">Next Quote</button>
+            </div>
+
+        </div>
+        <div id="div4">
+            <h4 id="h2">Click On The next Quote button To Generate Quote! </h4>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: darkcyan;
+        }
+        
+        #div2 {
+            font-family: Courier, monospace;
+            font-size: 30px;
+        }
+        
+        #h1 {
+            color: rgb(17, 20, 12);
+            margin: auto;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-bottom: 0.2em;
+        }
+        
+        #container {
+            background-color: darkcyan;
+            margin: auto;
+            width: 90%;
+            padding: 10px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        
+        #main {
+            background-color: lightgreen;
+            margin: auto;
+            padding: 30px;
+            width: 50%;
+            margin-top: 30px;
+            border-radius: 25px;
+        }
+        
+        #h2 {
+            color: black;
+            text-align: center;
+        }
+        
+        #btn1 {
+            border-radius: 25px;
+            background-color: yellowgreen;
+            border: none;
+            padding: 5px;
+            color: black;
+            font-weight: bold;
+        }
+        
+        #line {
+            color: yellow;
+            font-size: 30px;
+            padding: 5px;
+            border-radius: 30px;
+            align-self: baseline;
+            margin-top: 1em;
+            font-family: cursive;
+            /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+        }
+    </style>
+
+
+    <script>
+        var quotes = [{
+            'author': 'Martin Fowler',
+            'quote': 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.'
+        }, {
+            'author': 'Oscar Wilde',
+            'quote': 'Experience is the name everyone gives to their mistakes.'
+        }, {
+            'author': 'John Johnson',
+            'quote': 'First, solve the problem. Then, write the code.'
+        }, {
+            'author': 'Chris Heilmann',
+            'quote': 'Java is to JavaScript what car is to Carpet.'
+        }, {
+            'author': 'Dan Salomon',
+            'quote': 'Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.'
+        }, {
+            'author': 'Cory House',
+            'quote': 'Code is like humor. When you have to explain it, it’s bad.'
+        }, {
+            'author': 'Austin Freeman',
+            'quote': 'Simplicity is the soul of efficiency.'
+        }, {
+            'author': 'Ralph Johnson',
+            'quote': 'Before software can be reusable it first has to be usable.'
+
+        }, {
+            'author': 'Kent Beck',
+            'quote': 'Make it work, make it right, make it fast.'
+
+        }];
+
+        function generateQuote() {
+            const randomquotes = Number.parseInt(Math.random() * quotes.length + 1);
+            document.querySelector('#p1').innerHTML = quotes[randomquotes].quote;
+            document.querySelector('#p2').innerHTML = quotes[randomquotes].author;
+
+        }
+        var n = new Date();
+        let mor = n.getHours();
+        // if (mor >= 12) {
+        //     mor -= 12;
+        // }
+        // session = "PM"
+        // if (mor == 0) {
+        //     mor = 12;
+
+        // }
+        if (mor >= 6) {
+            var morning = document.getElementById('line').innerHTML = " lets start our morning time with new Quote!";
+
+        }
+        if (mor >= 19) {
+            var afternoon = document.getElementById('line').innerHTML = "lets start out day time with a new Quote!"
+        }
+        if (mor <= 24) {
+            var evening = document.getElementById('line').innerHTML = "lets start out evening with a new Quote!"
+        }
+        // document.getElementById('line').innerHTML = morning;
+    </script>
+</body>
+
+</html>
